@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="407.0" prefWidth="402.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<Pane prefHeight="417.0" prefWidth="402.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <Button fx:id="btn1" layoutX="14.0" layoutY="21.0" mnemonicParsing="false" onAction="#btn1_click" prefHeight="70.0" prefWidth="71.0" text="X" />
       <Button fx:id="btn2" layoutX="110.0" layoutY="21.0" mnemonicParsing="false" onAction="#btn2_click" prefHeight="70.0" prefWidth="71.0" text="X" />
@@ -21,5 +21,6 @@
       <Button fx:id="btn14" layoutX="110.0" layoutY="308.0" mnemonicParsing="false" onAction="#btn14_click" prefHeight="70.0" prefWidth="71.0" text="X" />
       <Button fx:id="btn15" layoutX="217.0" layoutY="308.0" mnemonicParsing="false" onAction="#btn15_click" prefHeight="70.0" prefWidth="71.0" text="X" />
       <Button fx:id="btn16" layoutX="314.0" layoutY="308.0" mnemonicParsing="false" onAction="#btn16_click" prefHeight="70.0" prefWidth="71.0" text="X" />
+      <Label fx:id="text_victory" layoutX="179.0" layoutY="394.0" prefHeight="18.0" prefWidth="43.0" text="Victory!" visible="false" />
    </children>
-</AnchorPane>
+</Pane>

@@ -2,16 +2,53 @@ package sample;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+
+import java.util.Random;
 
 public class Controller {
     private int[][] array = { {1,1,1,1},{1,1,1,1},{1,1,1,1},{1,1,1,1} };
     public Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8,
             btn9, btn10, btn11, btn12, btn13, btn14, btn15, btn16;
+    public Label text_victory;
+
+    public boolean isGameRunning=false;
+
+    public Controller(){
+        mix();
+    }
+
+    public void mix(){
+        String text;
+        for(int i=1; i<=16; i++){
+            if(new Random().nextInt(2)==0) text="O"; else text="X";
+            switch(i){
+                case 1: btn1.setText(text); break;
+                case 2: btn2.setText(text); break;
+                case 3: btn3.setText(text); break;
+                case 4: btn4.setText(text); break;
+                case 5: btn5.setText(text); break;
+                case 6: btn6.setText(text); break;
+                case 7: btn7.setText(text); break;
+                case 8: btn8.setText(text); break;
+                case 9: btn9.setText(text); break;
+                case 10: btn10.setText(text); break;
+                case 11: btn11.setText(text); break;
+                case 12: btn12.setText(text); break;
+                case 13: btn13.setText(text); break;
+                case 14: btn14.setText(text); break;
+                case 15: btn15.setText(text); break;
+                case 16: btn16.setText(text); break;
+            }
+        }
+        isGameRunning=true;
+    }
 
     public void btn1_click(ActionEvent actionEvent){
         changeTile(2,0,1);
         changeTile(5,1,0);
         changeTile(6,1,1);
+        if(checkTile()==true) text_victory.setVisible(true);
     }
 
     public void btn2_click(ActionEvent actionEvent){
@@ -161,6 +198,15 @@ public class Controller {
             case 15: if(array[3][2]==0) btn15.setText("O"); else btn15.setText("X"); break;
             case 16: if(array[3][3]==0) btn16.setText("O"); else btn16.setText("X"); break;
         }
+    }
+
+    public boolean checkTile(){
+        int sum=0;
+        for(int i=0; i<4; i++){
+            for(int j=0; j<4; j++) sum+=array[i][j];
+            if(isGameRunning==true && (sum==0 || sum==16)) return true;
+        }
+        return false;
     }
 
 }
